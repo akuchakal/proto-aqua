@@ -26,12 +26,12 @@
                 (ngModelChange)="onChanges($event)">
             </nz-cascader>
         </li>
-        <li>
+        <!-- <li>
             <a href="#" (click)="op2.show($event)">
                 <i class="topbar-icon fa fa-fw fa-sitemap primary-text"></i>
             </a>
 
-        </li>
+        </li> -->
         <li #settings [ngClass]="{'active-topmenuitem':app.activeTopbarItem === settings}">
             <a href="#" (click)="app.onTopbarItemClick($event,settings)">
                 <i class="topbar-icon fa fa-fw fa-sliders"></i>
@@ -102,16 +102,7 @@
             </ul>
         </li>
     </ul>
-    <p-overlayPanel #op2 [showCloseIcon]="true" [dismissable]="false">
-        <!-- <p-tree [value]="filesTree12" [filter]="true" filterMode="strict"></p-tree> -->
-        <nz-cascader 
-                [nzChangeOn]="validate" 
-                [nzOptions]="nzOptions" 
-                [nzLabelProperty]="'name'"
-                [nzValueProperty]="'code'" 
-                [nzShowSearch]="true" 
-                [(ngModel)]="values"
-                (ngModelChange)="onChanges($event)">
-            </nz-cascader>
-    </p-overlayPanel>
+    <!-- <p-overlayPanel #op2 [showCloseIcon]="true" [dismissable]="false">
+        <p-tree [value]="filesTree12" [filter]="true" filterMode="strict"></p-tree>
+    </p-overlayPanel> -->
 </div>

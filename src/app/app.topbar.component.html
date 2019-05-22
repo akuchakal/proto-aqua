@@ -1,0 +1,117 @@
+<div class="topbar clearfix">
+    <a href="#" id="menu-button" (click)="app.onMenuButtonClick($event,0)">
+        <span class="fa fa-angle-left"></span>
+    </a>
+    <a class="morpheus-logo-link" href="#">
+        <!-- <img src="assets/layout/images/morpheus-logo-{{app.theme}}.svg" class="morpheus-logo" /> -->
+        <span class="morpheus-logo-text">
+            Elanco
+        </span>
+    </a>
+
+    <a id="topbar-menu-button" href="#" (click)="app.onTopbarMenuButtonClick($event)">
+        <i class="fa fa-bars"></i>
+    </a>
+
+    <ul class="topbar-menu fadeInDown" [ngClass]="{'topbar-menu-visible': app.topbarMenuActive}">
+        <li #search  [ngClass]="{'active-topmenuitem':app.activeTopbarItem === search}"
+            (click)="app.onTopbarSearchItemClick($event)">
+            <nz-cascader 
+                [nzChangeOn]="validate" 
+                [nzOptions]="nzOptions" 
+                [nzLabelProperty]="'name'"
+                [nzValueProperty]="'code'" 
+                [nzShowSearch]="true" 
+                [(ngModel)]="values"
+                (ngModelChange)="onChanges($event)">
+            </nz-cascader>
+        </li>
+        <li>
+            <a href="#" (click)="op2.show($event)">
+                <i class="topbar-icon fa fa-fw fa-sitemap primary-text"></i>
+            </a>
+
+        </li>
+        <li #settings [ngClass]="{'active-topmenuitem':app.activeTopbarItem === settings}">
+            <a href="#" (click)="app.onTopbarItemClick($event,settings)">
+                <i class="topbar-icon fa fa-fw fa-sliders"></i>
+                <span class="topbar-item-name">Settings</span>
+            </a>
+            <ul class="fadeInDown">
+                <li role="menuitem">
+                    <a href="#" (click)="app.onTopbarSubItemClick($event)">
+                        <i class="fa fa-fw fa-paint-brush"></i>
+                        <span>Change Theme</span>
+                    </a>
+                </li>
+                <li role="menuitem">
+                    <a href="#" (click)="app.onTopbarSubItemClick($event)">
+                        <i class="fa fa-fw fa-star-o"></i>
+                        <span>Favorites</span>
+                    </a>
+                </li>
+                <li role="menuitem">
+                    <a href="#" (click)="app.onTopbarSubItemClick($event)">
+                        <i class="fa fa-fw fa-lock"></i>
+                        <span>Lock Screen</span>
+                    </a>
+                </li>
+                <li role="menuitem">
+                    <a href="#" (click)="app.onTopbarSubItemClick($event)">
+                        <i class="fa fa-fw fa-picture-o"></i>
+                        <span>Wallpaper</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li #profile class="profile-item" [ngClass]="{'active-topmenuitem':app.activeTopbarItem === profile}">
+            <a href="#" (click)="app.onTopbarItemClick($event,profile)">
+                <div class="profile-image">
+                    <img src="assets/layout/images/profile-image.png">
+                </div>
+                <span class="profile-text">Profile</span>
+            </a>
+
+            <ul class="fadeInDown">
+                <li role="menuitem">
+                    <a href="#" (click)="app.onTopbarSubItemClick($event)">
+                        <i class="fa fa-fw fa-user"></i>
+                        <span>Profile</span>
+                        <span class="topbar-submenuitem-badge">5</span>
+                    </a>
+                </li>
+                <li role="menuitem">
+                    <a href="#" (click)="app.onTopbarSubItemClick($event)">
+                        <i class="fa fa-fw fa-user-secret"></i>
+                        <span>Privacy</span>
+                        <span class="topbar-submenuitem-badge">2</span>
+                    </a>
+                </li>
+                <li role="menuitem">
+                    <a href="#" (click)="app.onTopbarSubItemClick($event)">
+                        <i class="fa fa-fw fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li role="menuitem">
+                    <a href="#" (click)="app.onTopbarSubItemClick($event)">
+                        <i class="fa fa-fw fa-sign-out"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <p-overlayPanel #op2 [showCloseIcon]="true" [dismissable]="false">
+        <!-- <p-tree [value]="filesTree12" [filter]="true" filterMode="strict"></p-tree> -->
+        <nz-cascader 
+                [nzChangeOn]="validate" 
+                [nzOptions]="nzOptions" 
+                [nzLabelProperty]="'name'"
+                [nzValueProperty]="'code'" 
+                [nzShowSearch]="true" 
+                [(ngModel)]="values"
+                (ngModelChange)="onChanges($event)">
+            </nz-cascader>
+    </p-overlayPanel>
+</div>

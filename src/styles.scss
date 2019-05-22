@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+@import '~@fullcalendar/timegrid/main.css';
+@import "~ng-zorro-antd/style/index.min.css"; /* Import basic styles */
+@import "~ng-zorro-antd/cascader/style/index.min.css"; /* Import styles of the component */
+
+.primary-text {
+    color: #4151a6;
+}
+.tree-icon {
+    color: #4151a6;
+    // font-size: 3em;
+}
+
+// .ant-cascader-picker {
+//     width: 300px;
+//   }
+
+body .ui-breadcrumb ul li .ui-menuitem-link {
+    color: #4151a6;
+}
+
+
+.bottombar {
+    height: 50px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-sizing: border-box;
+    background: #ffffff;
+    -webkit-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+    -moz-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+}
+
+.ui-steps .ui-steps-item {
+    width: 10%;
+}

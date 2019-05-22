@@ -1,0 +1,41 @@
+<div class="card card-w-title">
+    <div class="ui-g">
+        <div class="ui-g-12 ui-md-3">
+            <span class="primary-text">Evaluations</span>
+        </div>
+        <div class="ui-g-12 ui-md-3 ui-md-offset-6">
+            <p-calendar [showIcon]="true"></p-calendar>
+        </div>
+    </div>
+    <p-table [columns]="assCols" [value]="assessments" [(contextMenuSelection)]="selectedAss"
+        [style]="{'margin-bottom':'20px'}" [contextMenu]="cm">
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th style="width: 4em"></th>
+                <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                    {{col.header}}
+                    <p-sortIcon [field]="col.field"></p-sortIcon>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr [pContextMenuRow]="rowData">
+                <td>
+                    <button type="button" (click)="showDialog()" pButton icon="pi pi-eye" style="width: 2em"></button>
+                </td>
+                <td *ngFor="let col of columns">
+                    {{rowData[col.field]}}
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+<p-contextMenu #cm [model]="aItems"></p-contextMenu>
+<p-dialog header="Evaluation - Vaccination" [(visible)]="display" [modal]="true" [responsive]="true">
+    <app-wizard [disable]="disable"></app-wizard>
+    <p-footer *ngIf="disable">
+        <button type="button" pButton icon="pi pi-check" (click)="display=false" label="Save"></button>
+        <button type="button" pButton icon="pi pi-close" (click)="display=false" label="Cancel"
+            class="ui-button-secondary"></button>
+    </p-footer>
+</p-dialog>

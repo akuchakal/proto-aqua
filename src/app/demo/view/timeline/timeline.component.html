@@ -1,0 +1,19 @@
+<div class="card card-w-title">
+  <div class="ui-g">
+    <div class="ui-g-12">
+        <div class="ui-g-12 ui-md-3">
+            <span class="primary-text">Timeline</span>
+        </div>
+        <div class="ui-g-12 ui-md-3 ui-md-offset-6">
+            <p-calendar [showIcon]="true"></p-calendar>
+        </div>
+    </div>
+    <div class="ui-g-4">
+      <p-selectButton [options]="types" [(ngModel)]="selectedType"></p-selectButton>
+    </div>
+  </div>
+  <p-panel [style]="{'height':'100%'}">
+    <p-fullCalendar [events]="events" [options]="fullcalendarOptions"></p-fullCalendar>
+  </p-panel>
+
+</div>

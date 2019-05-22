@@ -1,0 +1,46 @@
+<div class="ui-fluid">
+    <div class="ui-g">
+        <div class="ui-g-12">
+            <div class="card no-margin">
+                
+                <p-breadcrumb [model]="breadcrumbItems" [home]="{icon: 'fa fa-home'}"></p-breadcrumb>
+                <div class="ui-g form-group" *ngIf="!hideCombos">
+                    <div class="ui-g-12 ui-md-6 ui-lg-2">
+                        <label for="multiselect" class="primary-text">Client</label>
+                        <p-multiSelect id="multiselect" [options]="carOptions" [(ngModel)]="selectedMultiSelectCars">
+                        </p-multiSelect>
+                    </div>
+                    <div class="ui-g-12 ui-md-6 ui-lg-2">
+                        <label for="multiselect" class="primary-text">Site</label>
+                        <p-multiSelect id="multiselect" [options]="carOptions" [(ngModel)]="selectedMultiSelectCars">
+                        </p-multiSelect>
+                    </div>
+                    <div class="ui-g-12 ui-md-6 ui-lg-2">
+                        <label for="multiselect" class="primary-text">Id Evaluation</label>
+                        <p-multiSelect id="multiselect" [options]="carOptions" [(ngModel)]="selectedMultiSelectCars">
+                        </p-multiSelect>
+                    </div>
+                    <div class="ui-g-12 ui-md-6 ui-lg-2">
+                        <label for="multiselect" class="primary-text">Elanco agent</label>
+                        <p-multiSelect id="multiselect" [options]="carOptions" [(ngModel)]="selectedMultiSelectCars">
+                        </p-multiSelect>
+                    </div>
+                    <div class="ui-g-12 ui-md-6 ui-lg-2">
+                        <label for="multiselect" class="primary-text">Type</label>
+                        <p-multiSelect id="multiselect" [options]="carOptions" [(ngModel)]="selectedMultiSelectCars">
+                        </p-multiSelect>
+                    </div>
+                    <div class="ui-g-12 ui-md-6 ui-lg-2">
+                        <label for="multiselect" class="primary-text">Tracing</label>
+                        <p-multiSelect id="multiselect" [options]="carOptions" [(ngModel)]="selectedMultiSelectCars">
+                        </p-multiSelect>
+                    </div>
+                </div>
+                
+            </div>
+            <router-outlet></router-outlet>
+
+        </div>
+
+    </div>
+</div>
